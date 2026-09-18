@@ -2,13 +2,8 @@
 
 * { box-sizing: border-box; }
 
-/* Author-stylesheet [hidden] override.
-   Without this, any element that also has a `display: flex/block/...` rule
-   in this file (e.g. .loading-overlay, .error-toast) will ignore the
-   `hidden` attribute: normal-priority author rules always beat the
-   browser's built-in `[hidden] { display: none }` UA rule, even at equal
-   specificity. Keeping this rule below acts as the tie-breaker so
-   `hidden` always wins, regardless of what other display rules exist. */
+/* The HTML `hidden` attribute must always win over any component's own
+   `display` rule below (loading overlay, error toast, app shell, etc). */
 [hidden] { display: none !important; }
 
 html, body {
